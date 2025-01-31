@@ -1,10 +1,12 @@
 pipeline {
     agent any
-
+        environment {
+            python="'C:\Users\Student\Python\Python313\python.exe'"
+        }
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                bat "${python} code.py"
             }
         }
         stage('Test') {
